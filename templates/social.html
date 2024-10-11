@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="main" id="body">
+        <p class="p_head" style="text-align: center; color:white;"> Social Links</p>
+
+        <div class="misc_box" onclick="openInNewTab('https://www.youtube.com/@M3galodon_Offical')">
+            <p class="info">Main Youtube Channel</p>
+            <p class="description">Inactive YT channel that contains tetris gameplay and a showcase of my fanmade chart</p>
+        </div>
+
+        <div class="misc_box" onclick="openInNewTab('https://x.com/M3galodnOffical')">
+            <p class="info">Twitter Profile</p>
+            <p class="description">Rarely using this account</p>
+        </div>
+
+        <div class="misc_box" style="cursor: default;">
+            <p class="info">Discord</p>
+            <p class="description">Username: surtr_gaming</p>
+        </div>
+
+        <div class="buttons">
+            <button id="back">Back</button>
+        </div>
+    </div>
+
+    <script>
+        function openInNewTab(url) {
+                var win = window.open(url, '_blank');
+                win.focus();
+            }
+
+
+        document.getElementById("back").addEventListener("click", function() {
+            window.location.href = "{{ url_for('index') }}";
+        });
+    </script>
+
+{% endblock content %}

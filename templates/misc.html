@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="main" id="body">
+        <p class="p_head" style="text-align: center; color: white;"> Rhythm Game Stats</p>
+
+            <div class="rg_container">
+
+                <div class="misc_box">
+                    <p class="info"> Phigros</p>
+                    <p class="description">Rarely play it. 15.57 RKS</p>
+                </div>
+
+                <div class="misc_box">
+                    <p class="info"> Arcaea</p>
+                    <p class="description">Cool mobile rhythm game but has paid DLCs so ye. 9.85 PPT</p>
+                </div>
+
+                <div class="misc_box">
+                    <p class="info">CHUNITHM</p>
+                    <p class="description">Cool rhythm game for me. I will try maimai if I have enough money though. Peak Rating 14.52</p>
+                </div>
+
+                <div class="misc_box">
+                    <p class="info"> vivid/stasis</p>
+                    <p class="description">One of the rhythm games on PC that I like to play. You should try playing it. Rating 9.8k</p>
+                </div>
+
+            </div>
+    
+                <p style="text-align: center; margin-top: 4px; margin-bottom: 0%;"> and others ...</p>
+
+            <p class="p_head" style="text-align: center; color: white;">Other Things that are related to me</p>
+
+            <div class="misc_box" onclick="openInNewTab('https://docs.google.com/document/d/14ApziAkfSgNdSwSugsOvrMmV--dY8D_fT0960XTKWa0/edit?usp=sharing')">
+                <p class="info">Phigros Fanmade Charting Guide</p>
+                <p class="description"><b>Incomplete.</b> Still I need some free time to finish this</p>
+            </div>
+
+        <div class="buttons">
+            <button id="back">Back</button>
+        </div>
+    </div>
+
+    <script>
+        function openInNewTab(url) {
+                var win = window.open(url, '_blank');
+                win.focus();
+            }
+
+
+        document.getElementById("back").addEventListener("click", function() {
+            window.location.href = "{{ url_for('index') }}";
+        });
+    </script>
+
+{% endblock content %}

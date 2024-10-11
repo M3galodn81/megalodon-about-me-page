@@ -7,17 +7,17 @@ document.addEventListener("DOMContentLoaded", function() {
     var socialMenu = document.getElementById("social");
     var miscMenu = document.getElementById("misc");
 
-    var blur = document.getElementsByClassName("background")[0]; // Access the first element
+    var blur = document.getElementsByClassName("background")[0];
 
     function closeAllMenus() {
-        musicMenu.classList.remove("show");
-        socialMenu.classList.remove("show");
-        miscMenu.classList.remove("show");
-        setTimeout(function() {
-            musicMenu.style.display = "none";
-            socialMenu.style.display = "none";
-            miscMenu.style.display = "none";
-        }, 0); // Wait for the transition to complete
+        if (musicMenu) musicMenu.classList.remove("show");
+        if (socialMenu) socialMenu.classList.remove("show");
+        if (miscMenu) miscMenu.classList.remove("show");
+        
+        musicMenu.style.display = "none";
+        socialMenu.style.display = "none";
+        miscMenu.style.display = "none";
+        
         blur.classList.remove("blurred");
     }
 
@@ -31,20 +31,19 @@ document.addEventListener("DOMContentLoaded", function() {
             blur.classList.add("blurred");
         }
     }
-
     musicButton.onclick = function(event) {
         toggleMenu(musicMenu);
-        event.stopPropagation(); // Prevent event from bubbling up to the document
+        event.stopPropagation();
     };
 
     socialButton.onclick = function(event) {
         toggleMenu(socialMenu);
-        event.stopPropagation(); // Prevent event from bubbling up to the document
+        event.stopPropagation();
     };
 
     miscButton.onclick = function(event) {
         toggleMenu(miscMenu);
-        event.stopPropagation(); // Prevent event from bubbling up to the document
+        event.stopPropagation();
     };
 
     // Close the menu if clicked outside of it

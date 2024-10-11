@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="main" id="body">
+
+        <div class="basic_info">
+            <img src="{{ url_for('static', filename='images/profile_pic.png') }}" class="profile_pic"/>
+
+            <h1 class="main_alias">M3galodon</h1>
+            <h2 class="other_alias">also known as Reality</h2>
+        </div>
+        
+        <div class="info"> 
+            <br style="@media (max-width: 1280px) {
+                visibility: none;
+            }">
+            <hr>
+            <p class="p_head">About Me</p>
+            <p>
+                A rhythm game enthusiast who rarely plays because of college hell and an aspiring music composer/producer who likes artcore music but doesn't know how to make artcore. also a professional wrong grammarist.
+            </p>
+
+            <hr>
+        </div>
+        
+        <div class="buttons">
+            <button id="music_button" href="{{ url_for('music') }}">Music Related Links</button>
+            <button id="social_button">Social Media Links</button>
+            <button id="misc_button">Misc. Info</button>
+
+            
+
+        </div>
+            <hr style="margin-left: 16px;margin-right: 16px; margin-top: 16px;">
+        {% block music %}
+        {% endblock music %}
+
+
+    </div>
+
+{% endblock content %}
+
+
