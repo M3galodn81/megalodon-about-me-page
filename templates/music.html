@@ -25,9 +25,6 @@
                     <p class="info">Contact Email</p>
                     <p class="description">Click this to have it on your clipboard</p>
                 </div>
-
-                
-                <p class="description" style="text-align: center; bottom:0px; margin:30px;" > Click outside the area to close the menu</p>
         
         <div class="buttons">
             <button id="back">Back</button>
@@ -39,6 +36,11 @@
         document.getElementById("back").addEventListener("click", function() {
             window.location.href = "{{ url_for('index') }}";
         });
+
+        function openInNewTab(url) {
+                var win = window.open(url, '_blank');
+                win.focus();
+            }
     </script>
 
     
